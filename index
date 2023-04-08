@@ -6,27 +6,27 @@ public class NoteTaker {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner s = new Scanner(System.in);
 
         String fileName, note;
 
         
 
-        // Prompt the user for a file name and note content
+
 
         System.out.print("Enter a file name: ");
 
-        fileName = scanner.nextLine();
+        fileName = sc.nextLine();
 
         System.out.print("Enter a note: ");
 
-        note = scanner.nextLine();
+        note = sc.nextLine();
 
         
 
         try {
 
-            // Write the note to a file
+            
 
             FileWriter fileWriter = new FileWriter(fileName);
 
@@ -36,7 +36,7 @@ public class NoteTaker {
 
             
 
-            // Read the note back from the file and display it
+            
 
             FileReader fileReader = new FileReader(fileName);
 
