@@ -1,0 +1,65 @@
+import java.io.*;
+
+import java.util.*;
+
+public class NoteTaker {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        String fileName, note;
+
+        
+
+        // Prompt the user for a file name and note content
+
+        System.out.print("Enter a file name: ");
+
+        fileName = scanner.nextLine();
+
+        System.out.print("Enter a note: ");
+
+        note = scanner.nextLine();
+
+        
+
+        try {
+
+            // Write the note to a file
+
+            FileWriter fileWriter = new FileWriter(fileName);
+
+            fileWriter.write(note);
+
+            fileWriter.close();
+
+            
+
+            // Read the note back from the file and display it
+
+            FileReader fileReader = new FileReader(fileName);
+
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+
+            String line;
+
+            System.out.println("Note saved. Here's what you wrote:");
+
+            while ((line = bufferedReader.readLine()) != null) {
+
+                System.out.println(line);
+
+            }
+
+            bufferedReader.close();
+
+        } catch (IOException e) {
+
+            System.out.println("Error: " + e.getMessage());
+
+        }
+
+    }
+
+}
